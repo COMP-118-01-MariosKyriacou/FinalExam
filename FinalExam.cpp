@@ -16,6 +16,7 @@ using namespace std;
 void DisplayMenu();
 void GetData(double[], const int, const int);
 double SumNegativeData(const double[], const int);
+int CountValue(const double[], const int, const double);
 
 /**
  * Main function: It is the main function in order to prompt the menu to the user and perform the operations selected by the user
@@ -26,7 +27,7 @@ double SumNegativeData(const double[], const int);
 int main() {
 	// Variables
 	const int ROW = 3, COL = 5;
-	int option = 0;
+	int option = 0, count = 0;
 	double matrix[ROW][COL], tempTotal = 0;
 
 	do {
@@ -34,7 +35,7 @@ int main() {
 		cin >> option;
 
 		// Data validation in order to ensure that the user enters a valid option
-		while (option < 0 || option > 2) {
+		while (option < 0 || option > 3) {
 			cout << "Incorrect option. Please try again: ";
 			cin >> option;
 		}
@@ -54,6 +55,16 @@ int main() {
 				}
 
 				cout << "The sum of all negative numbers is: " << tempTotal << endl;
+
+				break;
+			case 3:
+				count = 0;
+
+				for (int i = 0; i < ROW; i++) {
+					count += CountValue(matrix[i], COL, 1.5);
+				}
+
+				cout << "The number of elements with the value 1.5 is: " << count << endl;
 
 				break;
 			case 0:
