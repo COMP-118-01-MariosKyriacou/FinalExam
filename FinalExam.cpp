@@ -15,14 +15,52 @@ using namespace std;
 // Function Prototypes
 void DisplayMenu();
 void GetData(double[], const int);
-void SumNegativeData(const double[], const int, const int);
+double SumNegativeData(const double[], const int);
 
 /**
  * Main function: It is the main function in order to prompt the menu to the user and perform the operations selected by the user
- * until they select to exit the program.
+ * until they select to exit the program. We prompt the menu, we do the appropriate validation checks and then we perfom the correct operation
+ * using a switch statement
  * @return Returns 0 to indicate successful execution
  */
 int main() {
+	// Variables
+	const int ROW = 3, COL = 5;
+	int option = 0;
+	double matrix[ROW][COL];
+
+	do {
+		DisplayMenu();
+		cin >> option;
+
+		// Data validation in order to ensure that the user enters a valid option
+		while (option < 0 || option > 2) {
+			cout << "Incorrect option. Please try again: ";
+			cin >> option;
+		}
+
+		switch (option) {
+			case 1:
+				for (int i = 0; i < ROW; i++) {
+					GetData(matrix[i], COL);
+				}
+
+				break;
+			case 2:
+				double tempTotal = 0;
+				for (int i = 0; i < ROW; i++) {
+					tempTotal += SumNegativeData(matrix[i], COL);
+				}
+
+				cout << "The sum of all negative numbers is: " << tempTotal << endl;
+
+				break;
+			case 0:
+			default:
+				break;
+		}
+	} while (option != 0);
+
 	return 0;
 }
 
@@ -34,5 +72,7 @@ void DisplayMenu() {
 
 	cout << "1) Enter data in matrix (Range -1.5 to 0.5)" << endl;
 	cout << "2) Sum of all negative numbers" << endl;
-	cout << "0) Exit" << endl;
+	cout << "0) Exit" << endl << endl;
+
+	cout << "Please enter choice: ";
 }
