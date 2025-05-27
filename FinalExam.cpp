@@ -9,6 +9,7 @@
 */
 
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
@@ -39,6 +40,7 @@ int main() {
 			cout << "Incorrect option. Please try again: ";
 			cin >> option;
 		}
+		assert(option >= 0 && option <= 2);
 
 		switch (option) {
 			case 1:
@@ -106,6 +108,7 @@ void GetData(double matrix[], const int COLUMNS, const int SELECTED_ROW) {
 			cout << "Invalid number. Please provide a number between -1.5 and 0.5: ";
 			cin >> matrix[j];
 		}
+		assert(matrix[j] >= -1.5 && matrix[j] <= 0.5);
 
 		cout << endl;
 	}
