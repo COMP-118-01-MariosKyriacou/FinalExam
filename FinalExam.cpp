@@ -88,6 +88,12 @@ void GetData(double matrix[], const int COLUMNS, const int SELECTED_ROW) {
 	for (int j = 0; j < COLUMNS; j++) {
 		cout << "Enter a number for row " << SELECTED_ROW + 1 << " and column " << j + 1 << ": ";
 		cin >> matrix[j];
+
+		while (matrix[j] < -1.5 || matrix[j] > 0.5) {
+			cout << "Invalid number. Please provide a number between -1.5 and 0.5: ";
+			cin >> matrix[j];
+		}
+
 		cout << endl;
 	}
 }
