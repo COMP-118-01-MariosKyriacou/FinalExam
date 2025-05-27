@@ -91,3 +91,21 @@ void GetData(double matrix[], const int COLUMNS, const int SELECTED_ROW) {
 		cout << endl;
 	}
 }
+
+/**
+ * This function gets the matrix from the main function, sums all the negative numbers and returns it so it can be added up
+ * @param matrix The matrix with all of the data
+ * @param COLUMN The number of columns in the matrix
+ * @return Returns 0 if no negative numbers are found and the sum of all negative numbers in the specific row of the matrix if negative number(s) are found
+*/
+double SumNegativeData(const double matrix[], const int COLUMN) {
+	double sum = 0;
+
+	for (int j = 0; j < COLUMN; j++) {
+		if (matrix[j] < 0) {
+			sum += matrix[j];
+		}
+	}
+
+	return sum;
+}
