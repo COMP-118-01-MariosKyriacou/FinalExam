@@ -128,3 +128,21 @@ double SumNegativeData(const double matrix[], const int COLUMN) {
 
 	return sum;
 }
+
+/**
+ * This function counts the number of times a specific value appears in the matrix.
+ * @param matrix The matrix with all the data
+ * @param COLUMNS The number of columns in the matrix
+ * @param value The value that we are looking for
+ * @return Returns the number of times the value appears in the matrix
+*/
+int CountValue(const double matrix[], const int COLUMNS, const double value) {
+	int tempCount = 0;
+	for (int j = 0; j < COLUMNS; j++) {
+		if (matrix[j] == value) {
+			tempCount++;
+		}
+	}
+
+	return tempCount;
+}
