@@ -27,7 +27,7 @@ int main() {
 	// Variables
 	const int ROW = 3, COL = 5;
 	int option = 0;
-	double matrix[ROW][COL];
+	double matrix[ROW][COL], tempTotal = 0;
 
 	do {
 		DisplayMenu();
@@ -47,7 +47,8 @@ int main() {
 
 				break;
 			case 2:
-				double tempTotal = 0;
+				tempTotal = 0;
+
 				for (int i = 0; i < ROW; i++) {
 					tempTotal += SumNegativeData(matrix[i], COL);
 				}
