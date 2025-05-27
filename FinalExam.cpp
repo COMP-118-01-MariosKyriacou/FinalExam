@@ -74,6 +74,7 @@ int main() {
 				break;
 		}
 	} while (option != 0);
+	assert(option == 0);
 
 	return 0;
 }
@@ -129,6 +130,7 @@ double SumNegativeData(const double matrix[], const int COLUMN) {
 		}
 	}
 
+	assert(sum <= 0);
 	return sum;
 }
 
