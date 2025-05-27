@@ -12,6 +12,11 @@
 
 using namespace std;
 
+// Function Prototypes
+void DisplayMenu();
+void GetData(double[], const int);
+void SumNegativeData(const double[], const int, const int);
+
 /**
  * Main function: It is the main function in order to prompt the menu to the user and perform the operations selected by the user
  * until they select to exit the program.
@@ -19,4 +24,15 @@ using namespace std;
  */
 int main() {
 	return 0;
+}
+
+/**
+ * This function displays the appropriate menu options to the user
+*/
+void DisplayMenu() {
+	cout << endl;
+
+	cout << "1) Enter data in matrix (Range -1.5 to 0.5)" << endl;
+	cout << "2) Sum of all negative numbers" << endl;
+	cout << "0) Exit" << endl;
 }
