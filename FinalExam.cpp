@@ -73,6 +73,7 @@ void DisplayMenu() {
 
 	cout << "1) Enter data in matrix (Range -1.5 to 0.5)" << endl;
 	cout << "2) Sum of all negative numbers" << endl;
+	cout << "3) Count the number of elements with the value 1.5" << endl;
 	cout << "0) Exit" << endl << endl;
 
 	cout << "Please enter choice: ";
