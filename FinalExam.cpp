@@ -14,7 +14,7 @@ using namespace std;
 
 // Function Prototypes
 void DisplayMenu();
-void GetData(double[], const int);
+void GetData(double[], const int, const int);
 double SumNegativeData(const double[], const int);
 
 /**
@@ -42,7 +42,7 @@ int main() {
 		switch (option) {
 			case 1:
 				for (int i = 0; i < ROW; i++) {
-					GetData(matrix[i], COL);
+					GetData(matrix[i], COL, i);
 				}
 
 				break;
@@ -75,4 +75,19 @@ void DisplayMenu() {
 	cout << "0) Exit" << endl << endl;
 
 	cout << "Please enter choice: ";
+}
+
+/**
+ * This function gets the data from the user and stores it in the matrix. It prompts the user to enter a number and also gives them for which row and column they are entering the number for.
+ * (It gives it with the number starting from 1 in order to ensure that the user doesn't get confused)
+ * @param matrix The matrix where the data will be stored
+ * @param COLUMNS The number of columns that is in the matrix
+ * @param SELECTED_ROW The current row that we are on
+*/
+void GetData(double matrix[], const int COLUMNS, const int SELECTED_ROW) {
+	for (int j = 0; j < COLUMNS; j++) {
+		cout << "Enter a number for row " << SELECTED_ROW + 1 << " and column " << j + 1 << ": ";
+		cin >> matrix[j];
+		cout << endl;
+	}
 }
